@@ -20,5 +20,8 @@
   "homepage": "https://github.com/GT0221/to-do-list#readme",
   "dependencies": {
     "date-fns": "^2.23.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0"
   }
 }

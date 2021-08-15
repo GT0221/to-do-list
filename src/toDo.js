@@ -17,9 +17,9 @@ const loadProjects = (today) => {
             clearTaskDisplay();
         }
         addToList(taskValues, projects, currentProject);
-        sortedTasks = sortTaskList(projects[currentProject])
+        sortedTasks = sortTaskList(projects[currentProject]);
         sortedTasks.forEach((taskObj, index) => renderTask(taskObj, index));
-    }
+    };
     
     const newTask = () => {
         const inputTask = document.querySelector("#task").value;
@@ -31,8 +31,8 @@ const loadProjects = (today) => {
           date: dueDate,
           priority: taskPriority,
           completed: false
-        }
-    }
+        };
+    };
 
     const renderContent = (projects, key) => {
         const contentDiv = document.querySelector(".content");
@@ -46,9 +46,9 @@ const loadProjects = (today) => {
             currentTasks = sortTaskList(projects[key]);
         }
         contentDiv.appendChild(renderContentHeader(currentProject));
-        contentDiv.appendChild(taskAreaDiv)
+        contentDiv.appendChild(taskAreaDiv);
         currentTasks.forEach((task, index) => renderTask(task, index));
-    }
+    };
     
     const renderContentHeader = (currentProject) => {
         const headerDiv = document.createElement("div");
@@ -75,7 +75,7 @@ const loadProjects = (today) => {
         headerDiv.appendChild(btnsDiv);
 
         return headerDiv;
-    }
+    };
     
     const renderTask = (taskObj, index) => {
         const taskArea = document.querySelector(".taskArea");
@@ -111,7 +111,7 @@ const loadProjects = (today) => {
         }
         renderTaskBtns(taskContainer, completed);
         taskArea.appendChild(taskContainer);
-    }
+    };
 
     const renderTaskBtns = (taskContainer, completed) => {
         const div = document.createElement("div");
@@ -136,14 +136,14 @@ const loadProjects = (today) => {
         div.appendChild(completeBtn);
         div.appendChild(deleteTaskBtn);
         taskContainer.appendChild(div);
-    }
+    };
 
     const sortTaskList = (taskList) => {
         taskList = taskList.sort((a,b) => {
-            return  new Date(a.date) - new Date(b.date)
-        })
+            return  new Date(a.date) - new Date(b.date);
+        });
         return taskList;
-    }
+    };
 
     const setDueDay = (date) => {
         const daysLeft = differenceInCalendarDays(parseISO(date), parseISO(today));
@@ -154,19 +154,19 @@ const loadProjects = (today) => {
         } else if (daysLeft === 1 && daysLeft < 2) {
             return "Due Tomorrow"; 
         } else {
-            return `Due in ${daysLeft} days`
-    }
-    }
+            return `Due in ${daysLeft} days`;
+        }
+    };
 
     const setPriority = (value) => {
         const priorityObj = {"low": "green", "medium": "orange", "high": "red"};
         return priorityObj[value];
-        }
+    };
         
-        const deleteTask = (e) => {
+    const deleteTask = (e) => {
         const taskArea = document.querySelector(".taskArea");
         const taskId = e.target.parentElement.parentElement.id;
-        const clickedTask = document.getElementById(`${taskId}`)
+        const clickedTask = document.getElementById(`${taskId}`);
         clickedTask.remove();
 
         if (taskArea.firstChild) {
@@ -174,14 +174,14 @@ const loadProjects = (today) => {
         }
         deleteFromList(taskId, projects, currentProject);
         projects[currentProject].forEach((taskObj, index) => renderTask(taskObj, index));
-    }
+    };
 
     const renderProjectLink = (title) => {
         const links = document.querySelector(".links");
         const li = document.createElement("li");
         const a = document.createElement("a");
         const span = document.createElement("span");
-        const text = document.createTextNode("\u00D7")
+        const text = document.createTextNode("\u00D7");
 
         a.classList.add("projects");
         a.href = "#";
@@ -195,7 +195,7 @@ const loadProjects = (today) => {
         li.appendChild(a);
         li.appendChild(span);
         links.appendChild(li);
-    }
+    };
 
     const activeLink = (currentProject) => {
         const links = document.querySelectorAll("a");
@@ -209,23 +209,23 @@ const loadProjects = (today) => {
             }
         }
         newActiveLink.parentElement.classList.add("active");
-    }
+    };
 
     const clearContentDiv = () => {
     const contentDiv = document.querySelector(".content");
 
         while (contentDiv.firstChild) {
-            contentDiv.removeChild(contentDiv.firstChild)
+            contentDiv.removeChild(contentDiv.firstChild);
         }
-    }
+    };
 
     const clearTaskDisplay = () => {
         const taskArea = document.querySelector(".taskArea");
 
         while (taskArea.firstChild) {
-            taskArea.removeChild(taskArea.firstChild)
+            taskArea.removeChild(taskArea.firstChild);
         }
-    }
+    };
 
     const body = document.querySelector("body");
     const formDiv = document.querySelector(".formDiv");
@@ -234,7 +234,9 @@ const loadProjects = (today) => {
     const newProjectBtn = document.querySelector(".newProject");
     
     body.addEventListener("click", (e) => {
-            const classes = e.target.classList
+            const classes = e.target.classList;
+            let taskId;
+            let projectToDelete;
         
             switch (true) {
             case classes.contains("addTask"):
@@ -244,11 +246,10 @@ const loadProjects = (today) => {
                 deleteTask(e);
                 break;
             case classes.contains("completeTask"):
-                const taskId = e.target.parentElement.parentElement.id;
-                const key = currentProject;
+                taskId = e.target.parentElement.parentElement.id;
                 completedTask(taskId, projects, currentProject);
                 clearTaskDisplay();
-                projects[currentProject].forEach((taskObj, index) => renderTask(taskObj, index));;
+                projects[currentProject].forEach((taskObj, index) => renderTask(taskObj, index));
                 break;
             case classes.contains("projects"):
                 currentProject = e.target.innerText;
@@ -257,7 +258,7 @@ const loadProjects = (today) => {
                 activeLink(currentProject);
                 break;
             case classes.contains("deleteProject"):
-                const projectToDelete = e.target.parentElement.childNodes[0].innerText;
+                projectToDelete = e.target.parentElement.childNodes[0].innerText;
         
                 if (!(confirm("Are you sure you want to delete this project?"))) {
                 break;
@@ -282,20 +283,20 @@ const loadProjects = (today) => {
         }
         newProject(projects, title);
         renderProjectLink(title);
-    })
+    });
 
-    form.addEventListener("submit", submitTask)
+    form.addEventListener("submit", submitTask);
     closeFormBtn.addEventListener("click", () => formDiv.classList.add("hide"));
     
 
-    const defaultProject = {"Default": []}
+    const defaultProject = {"Default": []};
 
     let projects = (loadFromStorage("projects")) ? loadFromStorage("projects"):  defaultProject;
     let projectKeys = Object.keys(projects);
     let currentProject;
 
     if (projectKeys.length > 0) {
-        currentProject = projectKeys[0]
+        currentProject = projectKeys[0];
         projectKeys.forEach(key => renderProjectLink(key));
         renderContent(projects, currentProject);
         activeLink(currentProject);
