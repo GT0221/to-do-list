@@ -1,244 +1,244 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-  
-html, body {
-    width: 100vw;
-    height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
 }
 
 body {
-    display: grid;
-    grid-template-areas:
+  display: grid;
+  grid-template-areas:
     "name name name name name name"
     "sidenav main main main main main";
-    grid-template-rows: 0fr 1fr;
-    grid-template-columns: 13em 1fr 1fr 1fr 1fr 1fr;
-    overflow: hidden;
+  grid-template-rows: 0fr 1fr;
+  grid-template-columns: 13em 1fr 1fr 1fr 1fr 1fr;
+  overflow: hidden;
 }
 
 .title {
-    position: sticky;
-    top: 0;
-    grid-area: name;
-    font-size: 1.5em;
-    padding: 20px;
-    line-height: 1.5;
-    background-color: rgb(64, 224, 208);
+  position: sticky;
+  top: 0;
+  grid-area: name;
+  font-size: 1.5em;
+  padding: 20px;
+  line-height: 1.5;
+  background-color: rgb(64, 224, 208);
 }
 
 .sidenav {
-    grid-area: sidenav;
-    background-color: rgb(207, 201, 201);
-    padding: 20px 20px;
+  grid-area: sidenav;
+  background-color: rgb(207, 201, 201);
+  padding: 20px 20px;
 }
 
 .sidenav h2 {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
-a{
-    text-decoration: none;
-    color: black;
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .links li {
-    margin-top: 20px;
-    width: 90%;
-    padding: 5px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 5px;
 }
 
 .active {
-    background-color: rgb(128, 128, 128);
+  background-color: rgb(128, 128, 128);
 }
 
 .content {
-    grid-area: main;
-    position: relative;
-    width: 100%;
-    overflow-y: hidden;
+  grid-area: main;
+  position: relative;
+  width: 100%;
+  overflow-y: hidden;
 }
 
-.header h2{
-    padding: 20px 20px;
+.header h2 {
+  padding: 20px 20px;
 }
 
 .btns {
-    border-radius: 8px;
-    border: none;
-    padding: 15px 15px;
-    font-size: 12px;
+  border-radius: 8px;
+  border: none;
+  padding: 15px 15px;
+  font-size: 12px;
 }
 
 .btns:hover {
-    cursor: pointer;
-    background-color: hsl(195, 100%, 36%);
-    color: white;
+  cursor: pointer;
+  background-color: hsl(195, 100%, 36%);
+  color: white;
 }
 
 .formBtns {
-    text-align: center;
-    margin-top: 30px;
+  text-align: center;
+  margin-top: 30px;
 }
 
 #closeForm {
-    margin-left: 25px;
+  margin-left: 25px;
 }
 
 #closeForm:hover,
 .deleteTask:hover {
-    background-color: rgb(244, 67, 54);
-    color: white;
+  background-color: rgb(244, 67, 54);
+  color: white;
 }
 
-.overlay{
-    position: absolute; 
-    top: 25%; 
-    left: 5%; 
-    width: 100%; 
-    height: 100%; 
-    z-index: 2;
+.overlay {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 .formArea {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin-top: 30px;
-    transform: translate(-50%, -50%);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-top: 30px;
+  transform: translate(-50%, -50%);
 }
 
 form {
-    width: 50%;
-    margin: 0 auto;
-    padding: 30px;
-    border: 1px solid rgb(204, 204, 204);
-    background-color: white;
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid rgb(204, 204, 204);
+  background-color: white;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 form li + li {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 label {
-    display: inline-block;
-    width: 90px;
+  display: inline-block;
+  width: 90px;
 }
 
 input,
 select {
-    font: 1em sans-serif;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #999;
+  font: 1em sans-serif;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #999;
 }
 
 input:focus,
 select:focus {
-    border-color: #000;
+  border-color: #000;
 }
 
-
 .taskArea {
-    display: grid;
-    grid-template-columns: auto;
-    padding-top: 20px;
-    max-height: 600px;
-    overflow-y: auto;
+  display: grid;
+  grid-template-columns: auto;
+  padding-top: 20px;
+  max-height: 600px;
+  overflow-y: auto;
 }
 
 .task {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 13px;
-    background-color: white;
-    border-bottom: 1px solid #ccc;
-    border-left: 5px solid;
-    width: 75%;
-    margin: 0 auto;
-    margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 13px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  border-left: 5px solid;
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
-.left, 
+.left,
 .right {
-    padding: 20px 20px;
+  padding: 20px 20px;
 }
 
 .left {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    overflow-wrap: break-word;
-    width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+  width: 50%;
 }
 
 .completed {
-    text-decoration: line-through;
-    background-color: grey;
+  text-decoration: line-through;
+  background-color: grey;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 @media screen and (max-width: 900px) {
-    body {
-        grid-template-areas:
-        "name name name name name name"
-        "sidenav sidenav sidenav sidenav sidenav sidenav"
-        "main main main main main main";
-        grid-template-rows: 0fr 1fr 4fr;
-        font-size: 1em;
-    }
-    .content {
-        overflow-y: visible;
-    }
-    .sidenav {
-        height: 8em;
-        overflow-y: auto;
-    }
-    .overlay {
-        left: 0;
-    }
-    form {
-        width: 100vw;
-        margin: 0 auto;
-    }
-    input,
-    select {
-        padding: 5px;
-    }
-    .task {
-        flex-direction: column;
-        width: 100%;
-        border-left-width: 10px;
-    }
-    .left {
-        display: flex;
-        width: 100%;
-    }
-    .right {
-        text-align: center;
-        padding-top: 10px;
-    }
-    .taskText {
-        width: 200px;
-    }
+  body {
+    grid-template-areas:
+      "name name name name name name"
+      "sidenav sidenav sidenav sidenav sidenav sidenav"
+      "main main main main main main";
+    grid-template-rows: 0fr 1fr 4fr;
+    font-size: 1em;
+  }
+  .content {
+    overflow-y: visible;
+  }
+  .sidenav {
+    height: 8em;
+    overflow-y: auto;
+  }
+  .overlay {
+    left: 0;
+  }
+  form {
+    width: 100vw;
+    margin: 0 auto;
+  }
+  input,
+  select {
+    padding: 5px;
+  }
+  .task {
+    flex-direction: column;
+    width: 100%;
+    border-left-width: 10px;
+  }
+  .left {
+    display: flex;
+    width: 100%;
+  }
+  .right {
+    text-align: center;
+    padding-top: 10px;
+  }
+  .taskText {
+    width: 200px;
+  }
 }

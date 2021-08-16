@@ -1,9 +1,9 @@
 # to-do-list
 
-This is a to do list project using HTML, CSS, and Javascript. 
+This is a to do list project using HTML, CSS, and Javascript.
 Users can create new unique projects and add task to those projects.
 Task are sorted by due date (earliest). You can delete tasks or marked
-them as completed. Priority of the task is marked by the left border color 
+them as completed. Priority of the task is marked by the left border color
 of the task container itself, with green being lowest priotity, yellow somewhat
 important and red very important.
 

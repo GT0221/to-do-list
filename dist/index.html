@@ -3,55 +3,58 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>📝 Todo list</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-    </head>
+  <head>
+    <title>📝 Todo list</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <body>
-        <div class="title">
-            <h1 style="display: inline-block; clear: both;">To-do List</h1>
-            
-        </div>
-        <div class="sidenav">
-            <div><h2>Projects</h2></div>
-            <div style="text-align: center;">
-                <button class="btns newProject" type="button" style="margin-top: 20px">+ New Project</button>
-            </div>
-            <br>
-            <div style="width: 100%;">
-                <ul class="links"></ul>
-            </div>
-        </div>
-        <div class="formDiv overlay hide">
-                <form id="form">
-                    <ul>
-                        <li>
-                        <label for="task">Task:</label>
-                        <input type="text" id="task" name="task" maxlength="100">
-                        </li>
-                        <li>
-                        <label for="dueDate">Due date</label>
-                        <input type="datetime-local" id="dueDate" name="dueDate">
-                        </li>
-                        <li>
-                        <label for="priority">Priority:</label>
-                        <select id="priority" name="priority">
-                            <option value="low">low</option>
-                            <option value="medium">medium</option>
-                            <option value="high">high</option>
-                        </select>
-                        </li>
-                        <li class="formBtns">
-                            <button type="submit" class="btns submit">Submit</button>
-                            <button type="button" class="btns closeForm" id="closeForm">Close</button>
-                        </li>
-                        </ul>
-                   </form>
-            </div>
-        <div class="content"></div>
-        <script src="main.js"></script>
-    </body>
+  <body>
+    <div class="title">
+      <h1 style="display: inline-block; clear: both">To-do List</h1>
+    </div>
+    <div class="sidenav">
+      <div><h2>Projects</h2></div>
+      <div style="text-align: center">
+        <button class="btns newProject" type="button" style="margin-top: 20px">
+          + New Project
+        </button>
+      </div>
+      <br />
+      <div style="width: 100%">
+        <ul class="links"></ul>
+      </div>
+    </div>
+    <div class="formDiv overlay hide">
+      <form id="form">
+        <ul>
+          <li>
+            <label for="task">Task:</label>
+            <input type="text" id="task" name="task" maxlength="100" />
+          </li>
+          <li>
+            <label for="dueDate">Due date</label>
+            <input type="datetime-local" id="dueDate" name="dueDate" />
+          </li>
+          <li>
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority">
+              <option value="low">low</option>
+              <option value="medium">medium</option>
+              <option value="high">high</option>
+            </select>
+          </li>
+          <li class="formBtns">
+            <button type="submit" class="btns submit">Submit</button>
+            <button type="button" class="btns closeForm" id="closeForm">
+              Close
+            </button>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <div class="content"></div>
+    <script src="main.js"></script>
+  </body>
 </html>
